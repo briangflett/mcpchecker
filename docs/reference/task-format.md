@@ -196,7 +196,7 @@ Some step fields accept `{source.field}` template variables, which are resolved 
 | `{agent.output}` | The agent's final response |
 | `{agent.prompt}` | The prompt the agent was given |
 
-The `agent` variables are only available in the `verify` phase. In `setup` or `cleanup` the step fails with an error, because the agent has not run yet.
+The `agent` variables are only available in the `verify` phase. Only verify steps are given the agent's response, so a `setup` or `cleanup` step that uses them fails with an error.
 
 Fields that accept template variables:
 
